@@ -8,7 +8,7 @@ function getComputerChoice() {
 console.log(getComputerChoice())
 
 
-function result(playerSelection, computerSelection) {
+function match(playerSelection, computerSelection) {
     if(playerSelection == computerSelection){
         return "It's a Draw";
     }
@@ -25,11 +25,19 @@ function result(playerSelection, computerSelection) {
 }
 
 function playRound(playerSelection, computerSelection) {
-     
+    const result = match(playerSelection, computerSelection);
+    if (result == "It's a Draw") {
+        return "It's a Draw"
+    }
+    else if ( result == "Player") {
+        return `You Won! ${playerSelection} beats ${computerSelection}` 
+    }
+    else {
+        return `You Lost! ${computerSelection} beats ${playerSelection}`
+    }
 }
 
 
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
-getComputerChoice();
