@@ -5,20 +5,31 @@ function getComputerChoice() {
     const computerRandom = options[Math.floor(Math.random() * options.length)]
     return computerRandom;
     }
-//allows computer/npc to 'pick' a random choice from options array
+console.log(getComputerChoice())
 
+
+function result(playerSelection, computerSelection) {
+    if(playerSelection == computerSelection){
+        return "It's a Draw";
+    }
+    else if (
+        (playerSelection == "rock" && computerSelection == "scissors") ||
+        (playerSelection == "paper" && computerSelection == "rock") ||
+        (playerSelection == "scissors" && computerSelection == "paper")
+     ) {
+        return "Player";
+    }
+    else {
+        return "Computer";
+    }
+}
 
 function playRound(playerSelection, computerSelection) {
      
 }
-// will be player input vs cpu input
-
-function result(playerSelection, computerSelection) {
-
-}
-//will check the result of playRound and return "you win/lose/tie"
 
 
-
-
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
 getComputerChoice();
